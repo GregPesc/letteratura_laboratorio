@@ -1,11 +1,13 @@
-# liste di parole
 import json
 
 
 # parse input file
-def parse_file(file_name):
+def parse_file(file_name) -> None:
+    """
+    Parses input file
+    """
     output = []
-    with open(file_name, "r", encoding='utf-8') as file:
+    with open(file=file_name, mode="r", encoding='utf-8') as file:
         author = None
         title = None
         sonnet_body = []
@@ -35,6 +37,9 @@ def parse_file(file_name):
 
 
 # save parsed input
-def save_file(output):
-    with open("parsed_file.json", "w") as file:
+def save_file(output) -> None:
+    """
+    Saves parsed data in json file
+    """
+    with open("parsed_file.json", "w", encoding="utf-8") as file:
         json.dump(output, file)
