@@ -1,3 +1,4 @@
+from extracter import extract
 from text_analyzer import analyze
 from text_parser import parse_file
 
@@ -10,8 +11,9 @@ def main() -> None:
     Runs the script
     """
     parse_file(file_name=file_name)
-    analyze(file_name=json_name)
-
+    analysis = analyze(file_name=json_name)
+    extract(analysis)
+    
 
 if __name__ == "__main__":
     main()

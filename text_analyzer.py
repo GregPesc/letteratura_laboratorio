@@ -5,7 +5,7 @@ import pyphen
 from italian_dictionary import exceptions
 
 
-def analyze(file_name) -> None:
+def analyze(file_name):
     """
     Extracts wanted data from json file
     """
@@ -24,7 +24,7 @@ def analyze(file_name) -> None:
 
     with open(file="analysis.json", mode="w", encoding="utf-8") as file:
         json.dump(analysis, file)
-
+    return analysis
 
 def divide_into_syllables(word) -> str:
     """
