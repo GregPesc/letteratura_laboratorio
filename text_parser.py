@@ -25,7 +25,13 @@ def parse_file(file_name) -> None:
                     sonnet_body = []
                 title = line.strip("#").strip()
             else:
-                sonnet_body.append(line.strip().split())
+                # sonnet_body.append(line.strip().split())
+                stripped_words = []
+                for word in line.strip().split():
+                    word = word.strip(",.:»;?!")
+                    if word:
+                        stripped_words.append(word)
+                sonnet_body.append(stripped_words)
 
         sonnet_body = list(filter(None, sonnet_body))
         output.append({
