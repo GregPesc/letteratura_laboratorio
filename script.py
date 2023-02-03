@@ -1,4 +1,4 @@
-from extracter import extract
+from extracter import extract_rhymes, extract_words
 from text_analyzer import analyze
 from text_parser import parse_file
 
@@ -11,9 +11,13 @@ def main() -> None:
     Runs the script
     """
     parse_file(file_name=file_name)
-    analysis = analyze(file_name=json_name)
-    extract(analysis)
-    
+    analyze(file_name=json_name)
+    rhymes = extract_rhymes(file_name="analysis.json")
+    words = extract_words(file_name=json_name)
+
+    print(f"RIME\n{rhymes}")
+    print(f"PAROLE\n{words}")
+
 
 if __name__ == "__main__":
     main()
