@@ -13,7 +13,7 @@ def extract_rhymes(file_name):
             elif syllable in rhymes.keys():
                 rhymes.update({syllable: rhymes.get(syllable) + 1})
 
-    rhymes = sorted(rhymes.items(), key=lambda x:x[1], reverse=True)
+    rhymes = sorted(rhymes.items(), key=lambda x: x[1], reverse=True)
     return rhymes
 
 
@@ -28,5 +28,5 @@ def extract_words(file_name):
                     words.update({word: 1})
                 else:
                     words.update({word: words.get(word) + 1})
-    words = sorted(words.items(), key=lambda x:x[1], reverse=True)
+    words = sorted(words.items(), key=lambda x: x[1], reverse=True)
     return words
